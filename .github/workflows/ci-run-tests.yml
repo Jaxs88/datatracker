@@ -59,7 +59,7 @@ jobs:
         mv latest-coverage.json coverage.json
         
     - name: Upload Coverage Results as Build Artifact
-      uses: actions/upload-artifact@v3.0.0
+      uses: actions/upload-artifact@v4
       if: ${{ always() }}
       with:
         name: coverage
@@ -93,7 +93,7 @@ jobs:
         npx playwright test --project=${{ matrix.project }}
         
     - name: Upload Report
-      uses: actions/upload-artifact@v3.0.0
+      uses: actions/upload-artifact@v4
       if: ${{ always() }}
       continue-on-error: true
       with:
@@ -151,7 +151,7 @@ jobs:
         npx playwright test --project=${{ matrix.project }} -c playwright-legacy.config.js
         
     - name: Upload Report
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: ${{ always() }}
       continue-on-error: true
       with:
